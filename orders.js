@@ -35,6 +35,11 @@ class Ticket {
     this.items = items
     this.orderTime = orderTime
     this.customerId = customerId
+    this.status = 'queued'
+}
+updateStatus(newStatus) {
+    this.status = newStatus
+    console.log(`The status for customer ${this.customerId} is ${this.status}`)
 }
 }
 const updateStatus = (newStatus) =>
@@ -52,7 +57,7 @@ console.log(updateStatus('this.status'))
 */
 
 //CODE HERE
-let firstTicket = 
+const firstTicket = new Ticket(['pizza', 'bread', 'soda'], is '7:15', 575)
 
 
 /*
