@@ -68,7 +68,7 @@ console.log(pizza.tags[1]);
 */
 
 //CODE HERE
-let { newPrice } = pizza.price;
+let { price } = pizza;
 console.log(pizza.price);
 
 /*
@@ -80,7 +80,7 @@ console.log(pizza.price);
 
 //CODE HERE
 let { category } = pizza;
-console.log(pizza.category);
+console.log(category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -95,48 +95,49 @@ console.log(pizza.category);
 */
 
 //CODE HERE
-const foodArr = [ 
-    newPizza = {
-  name: "meat loves",
-  price: 20,
-  category: "meat",
-  popularity: 100,
-  rating: 100,
-  tags: ["pizza", "food", "love"],
-};
-const pizza2 = {
-  name: "best",
-  price: 15,
-  category: "cheese",
-  popularity: 90,
-  rating: 100,
-  tags: ["pizza", "great", "lovefood"],
-};
-const pizza3 = {
-  name: "Still meat",
-  price: 40,
-  category: "meat",
-  popularity: 50,
-  rating: 40,
-  tags: ["pizza", "food", "love"],
-};
-const pizza4 = {
-  name: "just bread",
-  price: 30,
-  category: "meat",
-  popularity: 69,
-  rating: 100,
-  tags: ["pizza", "food", "love"],
-};
-const pizza5 = {
-  name: "I love pizza",
-  price: 100,
-  category: "Everything you could ever want",
-  popularity: 100,
-  rating: 100,
-  tags: ["pizza", "food", "love", "this sent my soul to the place above"],
-}
-]
+const foodArr = [
+  {
+    name: "pizza",
+    price: 9.99,
+    category: "entree",
+    popularity: 1,
+    rating: 4.7,
+    tags: ["customer favorite", "kids", "gluten-free option"],
+  },
+  {
+    name: "pasta",
+    price: 8.99,
+    category: "entree",
+    popularity: 3,
+    rating: 4.8,
+    tags: ["customer favorite"],
+  },
+  {
+    name: "salad",
+    price: 7.99,
+    category: "side",
+    popularity: 4,
+    rating: 4.4,
+    tags: ["gluten-free option"],
+  },
+  {
+    name: "cookie",
+    price: 2.99,
+    category: "dessert",
+    popularity: 2,
+    rating: 5.0,
+    tags: ["customer favorite", "kids"],
+  },
+  {
+    name: "breadsticks",
+    price: 6.99,
+    category: "side",
+    popularity: 5,
+    rating: 4.6,
+    tags: ["customer favorite", "kids"],
+  },
+];
+
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
@@ -150,10 +151,12 @@ const pizza5 = {
 */
 
 //CODE HERE
-const giveMeTags = (newTag) => foodArr.tag;
-console.log(giveMeTags("pizza"));
 
-const filteredFood = foodArr.filter(element, foodArr.tag);
+const filteredFood = foodArr.filter((food) => {
+  if (food.tags.includes("kids")) {
+    return food;
+  }
+});
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -195,10 +198,16 @@ const filteredFood = foodArr.filter(element, foodArr.tag);
 */
 
 //CODE HERE
-const filterByProperty = (property, number, type){
-    
-}
-foodArr.filter(type['above']) => foodArr()
+const filterByProperty = (property, number, type) => {
+  const filteredFood = foodArr.filter((food) => {
+    if (type === "above") {
+      return food[property] >= number;
+    } else {
+      return food[property] <= number;
+    }
+  });
+  return filteredFood;
+};
 
 /*
     Invoke the `filterByProperty` function passing
@@ -208,4 +217,4 @@ foodArr.filter(type['above']) => foodArr()
 */
 
 //CODE HERE
-filterByProperty()
+console.log(filterByProperty("popularity", 3, "below"));

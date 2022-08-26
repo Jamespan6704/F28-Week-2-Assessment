@@ -34,10 +34,9 @@ const cart = [
 
 //CODE HERE
 
-const summedPrice = (numbers) => {
-  return numbers.reduce((acc, curr) => acc + curr);
-};
-console.log(summedPrice(cart));
+const summedPrice = cart.reduce((total, current) => total + current.price, 0);
+
+console.log(summedPrice);
 //////////////////PROBLEM 2////////////////////
 /*  
     Write a function called `calcFinalPrice` that
@@ -53,9 +52,13 @@ console.log(summedPrice(cart));
     decimals, for example: .06 for a 6% tax.
 */
 
-const calcFinalPrice = (cartTotal, couponValue, tax) => {};
 //CODE HERE
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+  const totalBeforeCoupon = cartTotal * (1 + tax);
+  const finalPrice = totalBeforeCoupon - couponValue;
+  return finalPrice;
+};
+console.log(calcFinalPrice(40, 5, 0.01));
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -87,3 +90,11 @@ const calcFinalPrice = (cartTotal, couponValue, tax) => {};
 */
 
 //CODE HERE
+
+const firstCustomer = {
+  firstName: "James",
+  lastName: "Pan",
+  address: "567 Candycane Ln",
+  city: "Pleasant Gove",
+  phoneNumber: 8015555555,
+};
