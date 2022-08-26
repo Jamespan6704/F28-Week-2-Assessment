@@ -1,0 +1,3 @@
+Adobe Web stack - OSGi, JCR, Oak, and Sling
+Apple - HTML5 , Google Analytics , and jQuery
+facebook - React, PHP, Jenkins, GraphQL, and Confluence
