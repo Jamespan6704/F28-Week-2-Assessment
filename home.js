@@ -50,12 +50,12 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206];
 //CODE HERE
 const canWeDeliver = (zipCode) => {
   if (deliveryAreaZipCodes.includes(zipCode)) {
-    console.log("You are in our delivery zone!");
+    return "You are in our delivery zone!";
   } else {
-    console.log("Sorry, we cant deliver to that address");
+    return "Sorry, we cant deliver to that address";
   }
 };
-console.log(canWeDeliver(85204));
+console.log(canWeDeliver(85212));
 /* 
     Problem 2 Continued
 
@@ -76,13 +76,11 @@ console.log(canWeDeliver(85204));
 // CODE HERE
 const canWeDeliverTwo = (zipCode2) => {
   for (let i = 0; i < deliveryAreaZipCodes.length; i++) {
-    if (zipCode2 === deliveryAreaZipCodes[i]) {
+    if (deliveryAreaZipCodes[i] === zipCode2) {
       return "You are in our delivery zone!";
-    } else if (zipCode2 !== deliveryAreaZipCodes[i]) {
-      return "Sorry we cant deliver to that address";
     }
   }
-  i++;
+  return "Sorry we cant deliver to that address";
 };
 console.log(canWeDeliverTwo(85203));
 
@@ -120,8 +118,8 @@ const deals = [
 */
 
 //CODE HERE
-deals.title[0].replace = "10% off!";
-console.log(deals.title);
+deals[0].title = deals[0].title.replace("15%", "10%");
+console.log(deals);
 
 /*
     The restaurant is going to continue its
@@ -137,4 +135,6 @@ console.log(deals.title);
 */
 
 //CODE HERE
-// deals["desc"].trim() = "This deal lasts till the end of April!";
+deals[1].desc = deals[1].desc.replace("March", "April");
+deals[1].desc = deals[1].desc.trim(" ");
+console.log(deals);
